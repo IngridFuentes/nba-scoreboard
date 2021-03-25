@@ -2,20 +2,23 @@ const express = require('express');
 // require('dotenv').config();
 const bodyParser = require('body-parser');
 // const cors = require("cors");
-const gameRoutes = require('./routes/routes')
+const path = require('path');
+const gameRoutes = require('./routes/routes');
+// const getScores = require('./controllers/gamesController')
 
 const app = express();
 
 // var corsOptions = {
 //   origin: "http://localhost:5001"
 // };
+app.use(bodyParser.json());
 
 app.use('/games',gameRoutes);
 // app.use(cors(corsOptions));
-app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to an NBA application." });
+app.get("/games", (req, res) => {
+  console.log('hereeeee')
+    res.json('NBA SCORES');
   });
 
 //   const PORT = process.env.PORT || 5000;

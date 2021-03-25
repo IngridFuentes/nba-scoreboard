@@ -1,7 +1,7 @@
 const getGamesScores = require('../config/config');
 const unirest = require("unirest");
 
-function getScore(req, res) {
+function getScore(req, result) {
 
     var unirest = require("unirest");
     var req = unirest("GET", "https://free-nba.p.rapidapi.com/games");
@@ -23,10 +23,10 @@ function getScore(req, res) {
 
         console.log(res.body);
 
-        if(result.status == 200) {
+        if(res.status == 200) {
             let scores = [];
             
-            let gamesArray = result.body;
+            let gamesArray = res.body;
             let allData = gamesArray.data;
 
             allData.forEach( data => {
@@ -51,7 +51,7 @@ function getScore(req, res) {
                 }
                 scores.push(allGames);
             });
-            return res.json(scores);
+            return result.json(scores);
         }
     });
 

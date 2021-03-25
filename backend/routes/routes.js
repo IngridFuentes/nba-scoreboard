@@ -1,10 +1,10 @@
 const express = require('express');
 
 const router = express.Router();
-const gamesController = require('../controllers/gamesController');
+const getScore = require ('../controllers/gamesController');
 
 // console.log('hereeeeeee')
-router.get('/games', gamesController); 
+router.get('/', getScore); 
 
 
 module.exports = router;
