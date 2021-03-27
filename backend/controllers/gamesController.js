@@ -6,15 +6,10 @@ function getScore(req, result) {
     var unirest = require("unirest");
     var req = unirest("GET", "https://free-nba.p.rapidapi.com/games");
 
-    // req.query({
-    //     "page": "0",
-    //     "per_page": "25"
-    // });
 
     req.headers({
         "x-rapidapi-key": "07fcfc2a14msh021e912175b88e5p118160jsnd0c64aac64ae",
         "x-rapidapi-host": "free-nba.p.rapidapi.com",
-        // "useQueryString": true
     });
 
 
