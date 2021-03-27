@@ -1,24 +1,20 @@
 const express = require('express');
 // require('dotenv').config();
 const bodyParser = require('body-parser');
-// const cors = require("cors");
 const path = require('path');
 const gameRoutes = require('./routes/routes');
-// const getScores = require('./controllers/gamesController')
 
 const app = express();
+const pool = require('./db');
 
-// var corsOptions = {
-//   origin: "http://localhost:5001"
-// };
 app.use(bodyParser.json());
 
 app.use('/games',gameRoutes);
-// app.use(cors(corsOptions));
 
-app.get("/games", (req, res) => {
+
+app.get("/", (req, res) => {
   console.log('hereeeee')
-    res.json('NBA SCORES');
+    res.json('NBA GAMES SCORES');
   });
 
 //   const PORT = process.env.PORT || 5000;
