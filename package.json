@@ -1,4 +1,33 @@
 {
+<<<<<<< HEAD
+  "name": "nba-scoreboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IngridFuentes/nba-scoreboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IngridFuentes/nba-scoreboard/issues"
+  },
+  "homepage": "https://github.com/IngridFuentes/nba-scoreboard#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+=======
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -42,5 +71,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+>>>>>>> 7fdc6812e806bffb8c88f5032b668d9a61c02fdf
   }
 }
