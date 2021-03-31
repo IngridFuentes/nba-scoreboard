@@ -1,41 +1,128 @@
-.App {
-  text-align: center;
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(88.97% 283.88% at 9.18% 24.9%, #2B0E38 0%, rgba(41, 13, 53, 0.86) 22.36%, #3B0F4A 40.45%, #44236D 74.37%, rgba(82, 88, 112, 0.84) 100%, rgba(34, 8, 55, 0.89) 100%);
+  mix-blend-mode: normal;
+  /* Gray 2 */
+  border: 1px solid #4F4F4F;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  position: absolute;
+  width: 206px;
+  height: 36px;
+  left: 80px;
+  top: 50px;
+  font-family: Rosario;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 24px;
+  color: #FFFAFA;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  position: absolute;
+  right: 500px;
+  top: 160px;
+  width: 176px;
+  height: 174px;
+  border-radius: 120px;
+  background-image: url(ball.jpg);
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.row {
+  margin: 0 -5px;
 }
 
-.App-link {
-  color: #61dafb;
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column {
+  float: left;
+  width: 25%;
+  padding: 30px;
 }
 
+.card {
+  width: 350px;
+  height: 200px;
+  top: 200px;
+  left: 80px;
+  display: inline-block;
+  background: radial-gradient(97.57% 265% at 0% 7.2%, rgba(255, 252, 252, 0.8) 0%, #FFFFFF 0.01%, rgba(255, 255, 255, 0.968847) 0.02%, rgba(255, 252, 252, 0.75) 100%);
+  border-radius: 10px;
+}
 
+.calendar {
+  margin-top: 100px;
+  margin-left: 80px;
+}
 
+.forum {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  right: 25px;
+  top: 30px;
+  font-family: Rosario;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 24px;
+  color: #584949;
+}
 
+.form-group {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.container-form {
+  position: absolute;
+  margin-left: 530px;
+  margin-top: 80px;
+}
+
+.btn-primary {
+  margin-left: 80px;
+}
+
+.status {
+  margin-top: -20px;
+  margin-left: 260px;
+  color: #392050;
+}
+
+.home-score {
+  margin-top: -25px;
+}
+
+.visitor-score {
+  margin-top: -22px;
+}
+
+.visitor-team {
+  margin-top: 35px;
+}
+
+.season {
+  margin-top: -27px;
+  margin-left: 260px;
+  color: #370862;
+}
+
+.date {
+  color: #470d7e;
+}
+/*# sourceMappingURL=App.css.map */

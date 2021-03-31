@@ -1,160 +1,72 @@
 import React from 'react';
 import {Row, Col, Container} from 'react-bootstrap';
+import Suggestions from './Suggestions';
+
 
 const GamesCards = (props) => {
 
-    console.log(props.homeTeam)
+    // console.log(props.homeTeam)
 
     return (
         
-       <Container >
-           {/* <div className="row"> */}
-           <Row className='application-row'> 
-            {/* <Col sm={4}> */}
-            {/* <div class="column"> */}
+       <Container  className="container-card">
                     <div className="card">
                     
-                        <div> {props.date}</div>
-                        <div> {props.homeTeam} </div>
-                        <div> {props.homeTeamCity} </div>
-                        <div> {props.homeTeamScore} </div>
-                        <div> {props.season} </div>
-                        <div> {props.status} </div>
-                        <div> {props.visitorTeam} </div>
-                        <div> {props.visitorTeamScore} </div>
+                        <div className="date"> {props.date.slice(0, 10)}</div>
+                        <div>
+                                <Col className="status"> 
+                                    Status 
+                                <div> {props.status} </div>
+                                </Col>
+                                
+                        </div>
+                        <div> 
+                            <Row> 
+                                <Col>
+                                <img className="logo2" src="data:image/jpeg;base64,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" />
+                                </Col>
+                                <Col className="home-team"> {props.homeTeam} </Col>
+                            </Row>
+                             
+                        </div>
+                        {/* <div> {props.homeTeamCity} </div> */}
+                        <div> 
+                        <Row>
+                                <Col>
+                                {/* <img className="logo" src="" alt="image"/> */}
+                                </Col>
+                            <Col className="home-score"> {props.homeTeamScore} </Col> 
+                        </Row>
+                        </div>
+                        
+                        <div > 
+                            <Row> 
+                                <Col>
+                                <img className="logo2" src="data:image/jpeg;base64,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" />
+                                </Col>
+                                <Col className="visitor-team">  {props.visitorTeam} </Col>
+                            </Row>
+                        </div>
+
+                        <div> 
+                            <Row> 
+                                <Col>
+                                {/* <img className="logo" src="" alt="image"/> */}
+                                </Col>
+                                <Col className="visitor-score"> {props.visitorTeamScore} </Col>
+                            </Row>
+                        </div>
+                        <div className="season"> 
+                                <Col> 
+                                    Season
+                                    <div> {props.season} </div> 
+                                </Col> 
+                            
+                        </div>
                          
                         
                     </div>
-            {/* </div> */}
-
-            {/* <div class="column">
-                    <div className="card">
-                    
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                        
-                    </div>
-            </div> */}
-                {/* </Col> */}
-                </Row>
-                
-
-                {/* <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                <Row>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                </Row>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col>
-
-                <Col className="column">
-                    <div className="card">
-                        <h3>{props.date}</h3>
-                        <div>{props.homeTeam}</div>
-                        <p>{props.homeTeamCity}</p>
-                        <p>{props.homeTeamScore}</p>
-                        <p>{props.season}</p>
-                        <p>{props.status}</p>
-                        <p>{props.visitorTeam}</p>
-                        <p>{props.visitorTeamScore}</p>
-                    </div>
-                </Col> */}
-
-           {/* </div> */}
-
+           
    </Container>
     )
 

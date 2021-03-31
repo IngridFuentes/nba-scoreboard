@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 import GamesCards from './GamesCards';
+import Suggestions from './Suggestions'
 
 
 export const Games = () => {
@@ -12,13 +13,12 @@ export const Games = () => {
         
         axios.get('http://localhost:3001/api/games')
         .then(res => {
-            console.log(res)
+            // console.log(res)
             setInitialState(res.data)
         })
         .catch(error => {
             console.log(error)
         })
-
     })
 
     return(
