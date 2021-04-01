@@ -25,7 +25,7 @@ Visual studio code
 
 #### Installation
 
-create-react-app nba-scoreboard
+npx create-react-app nba-scoreboard
 npm install
 npm install express --save
 
